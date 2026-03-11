@@ -1,0 +1,130 @@
+:root {
+    --mint: #2DD4BF;
+    --mint-dark: #0D9488;
+    --mint-light: #F0FDFA;
+    --white: #FFFFFF;
+    --text: #334155;
+    --grey: #F8FAFC;
+    --border: #E2E8F0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+body { background: var(--grey); display: flex; color: var(--text); min-height: 100vh; }
+
+/* Sidebar Nav - Full Icon */
+.side-nav {
+    width: 70px;
+    height: 100vh;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    position: fixed;
+    border-right: 1px solid var(--border);
+    z-index: 100;
+}
+
+.logo { font-weight: 800; font-size: 1.1rem; margin-bottom: 40px; color: var(--text); }
+.logo span { color: var(--mint); }
+
+.nav-icons { flex-grow: 1; display: flex; flex-direction: column; gap: 20px; }
+.nav-icons a {
+    color: #94A3B8;
+    font-size: 1.3rem;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.nav-icons a:hover, .nav-icons a.active { 
+    color: var(--mint); 
+    background: var(--mint-light);
+    transform: translateX(5px);
+}
+
+/* Main Content Area */
+.main-content { margin-left: 70px; width: calc(100% - 70px); padding: 30px; }
+
+/* Header Style */
+.top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.search-bar {
+    background: var(--white);
+    padding: 10px 20px;
+    border-radius: 12px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+}
+.search-bar input { border: none; outline: none; margin-left: 10px; width: 100%; font-size: 0.9rem; }
+
+/* Category Headers */
+.cat-header {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-left: 6px solid var(--mint);
+}
+.cat-title { display: flex; align-items: center; gap: 15px; }
+.cat-title i { font-size: 1.5rem; color: var(--mint); }
+.price-pills a {
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text);
+    background: var(--grey);
+    padding: 6px 15px;
+    border-radius: 50px;
+    margin-left: 8px;
+    border: 1px solid var(--border);
+}
+
+/* Product Grid - High Density */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+.p-card {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: 0.3s;
+}
+.p-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.p-card img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+.p-info h4 { font-size: 0.8rem; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-info p { font-size: 0.9rem; font-weight: 800; color: var(--mint-dark); }
+
+/* Buttons & Badges */
+.btn-wa {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #25D366;
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.sale-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #EF4444;
+    color: white;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: 800;
+}
